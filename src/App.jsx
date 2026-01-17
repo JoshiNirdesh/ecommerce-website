@@ -1,15 +1,10 @@
-import { useContext } from "react";
-import { ThemeContext } from "./context/ThemeContext";
+import React from 'react'
+import Navbar from './components/Navbar'
 
-
-useContext
 const App = () => {
-  const name = useContext(ThemeContext);
-
   return (
-
     <div>
-      {name}
+      <Navbar />
     </div>
   )
 }
