@@ -1,5 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { dummyProducts } from "../assets/greencart_assets/assets";
 
 export const AppContext = createContext();
 
@@ -9,7 +10,15 @@ export const AppProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [isSeller, setIsSeller] = useState(false)
     const [showUserLogin, setShowUserLogin] = useState(false)
-    const value = { navigate, user, setUser, isSeller, setIsSeller, showUserLogin, setShowUserLogin };
+    const [products ,setProducts]=useState([]);
+
+    const fetchProducts = ()=>{
+        setProducts(dummyProducts);
+    }
+    useEffect(()=>{
+        fetchProducts()
+    },[])
+    const value = { navigate, user, setUser, isSeller, setIsSeller, showUserLogin, setShowUserLogin,products };
     return (
 
         <AppContext.Provider value={value}>
