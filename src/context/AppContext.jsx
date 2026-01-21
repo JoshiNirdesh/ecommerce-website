@@ -23,7 +23,9 @@ export const AppProvider = ({ children }) => {
     },[])
 
     const addToCart = (itemId)=>{
+        console.log(cartItems)
         let cartData = structuredClone(cartItems)
+        console.log(cartData)
         if(cartData[itemId]){
             cartData[itemId]+=1
         }
