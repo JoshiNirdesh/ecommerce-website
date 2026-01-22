@@ -7,6 +7,8 @@ import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 import { useAppContext } from './context/AppContext'
 import Login from './components/Login'
+import AllProducts from './pages/AllProducts'
+import ProductCategory from './pages/ProductCategory'
 
 
 const App = () => {
@@ -20,6 +22,10 @@ const App = () => {
       <div className='px-6 md:px-16 lg:px-24 xl:px-32'>
         <Routes>
           <Route path="/" element={<Home />} />
+        <Route path="products" element={<AllProducts/>} />
+        <Route path="products/:category" element={<ProductCategory/>} />
+
+
         </Routes>
       </div>
        <Footer/>
