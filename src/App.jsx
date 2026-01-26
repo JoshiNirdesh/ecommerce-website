@@ -10,6 +10,7 @@ import Login from "./components/Login";
 import AllProducts from "./pages/AllProducts";
 import ProductCategory from "./pages/ProductCategory";
 import ProductDetails from "./components/ProductDetails";
+import Cart from "./components/Cart";
 
 const App = () => {
   const { showUserLogin } = useAppContext();
@@ -28,6 +29,7 @@ const App = () => {
             path="products/:category/:itemId"
             element={<ProductDetails />}
           />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
       <Footer />
