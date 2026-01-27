@@ -11,6 +11,8 @@ import AllProducts from "./pages/AllProducts";
 import ProductCategory from "./pages/ProductCategory";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
+import AddAddress from "./components/AddAddress";
+import MyOrders from "./components/MyOrders";
 
 const App = () => {
   const { showUserLogin } = useAppContext();
@@ -30,6 +32,8 @@ const App = () => {
             element={<ProductDetails />}
           />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/add-address" element={<AddAddress />} />
+          <Route path="/my-orders" element={<MyOrders />} />
         </Routes>
       </div>
       <Footer />
