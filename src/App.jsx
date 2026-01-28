@@ -36,7 +36,6 @@ const App = () => {
           <Route path="/my-orders" element={<MyOrders />} />
         </Routes>
       </div>
-      <Test />
       <Footer />
     </div>
   );

@@ -824,7 +824,7 @@ export const dummyOrders = [
     userId: "67b5880e4d09769c5ca61644",
     items: [
       {
-        product: dummyProducts[0],
+        product: dummyProducts[4],
         quantity: 1,
         _id: "67e258798f87e633667863f3",
       },
