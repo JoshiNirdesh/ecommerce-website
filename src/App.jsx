@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Test from "./components/Test";
 import { Toaster } from "react-hot-toast";
@@ -13,13 +13,17 @@ import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
 import AddAddress from "./components/AddAddress";
 import MyOrders from "./components/MyOrders";
+import SellerLogin from "./components/seller/SellerLogin";
 
 const App = () => {
-  const { showUserLogin } = useAppContext();
+  const { showUserLogin, isSeller } = useAppContext();
+  const location = useLocation();
+
+  const isSellerPage = location.pathname.startsWith("/seller");
 
   return (
     <div>
-      <Navbar />
+      {!isSellerPage && <Navbar />}
       {showUserLogin ? <Login /> : ""}
       <Toaster />
       <div className="px-6 md:px-16 lg:px-24 xl:px-32">
@@ -34,9 +38,10 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/add-address" element={<AddAddress />} />
           <Route path="/my-orders" element={<MyOrders />} />
+          <Route path="/seller" element={isSeller ? null : <SellerLogin />} />
         </Routes>
       </div>
-      <Footer />
+      {!isSellerPage && <Footer />}
     </div>
   );
 };
