@@ -14,6 +14,7 @@ import Cart from "./components/Cart";
 import AddAddress from "./components/AddAddress";
 import MyOrders from "./components/MyOrders";
 import SellerLogin from "./components/seller/SellerLogin";
+import SellerLayout from "./pages/seller/SellerLayout";
 
 const App = () => {
   const { showUserLogin, isSeller } = useAppContext();
@@ -26,7 +27,7 @@ const App = () => {
       {!isSellerPage && <Navbar />}
       {showUserLogin ? <Login /> : ""}
       <Toaster />
-      <div className="px-6 md:px-16 lg:px-24 xl:px-32">
+      <div className={isSeller ? "" : "px-6 md:px-16 lg:px-24 xl:px-32"}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="products" element={<AllProducts />} />
@@ -38,7 +39,10 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/add-address" element={<AddAddress />} />
           <Route path="/my-orders" element={<MyOrders />} />
-          <Route path="/seller" element={isSeller ? null : <SellerLogin />} />
+          <Route
+            path="/seller"
+            element={isSeller ? <SellerLayout /> : <SellerLogin />}
+          />
         </Routes>
       </div>
       {!isSellerPage && <Footer />}
