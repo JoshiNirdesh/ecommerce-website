@@ -15,6 +15,7 @@ import AddAddress from "./components/AddAddress";
 import MyOrders from "./components/MyOrders";
 import SellerLogin from "./components/seller/SellerLogin";
 import SellerLayout from "./pages/seller/SellerLayout";
+import ContactUs from "./components/ContactUs";
 
 const App = () => {
   const { showUserLogin, isSeller } = useAppContext();
@@ -36,6 +37,8 @@ const App = () => {
             path="products/:category/:itemId"
             element={<ProductDetails />}
           />
+          <Route path="/contact-us" element={<ContactUs />} />
+
           <Route path="/cart" element={<Cart />} />
           <Route path="/add-address" element={<AddAddress />} />
           <Route path="/my-orders" element={<MyOrders />} />
