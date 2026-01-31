@@ -34,20 +34,24 @@ const SellerLayout = () => {
           </button>
         </div>
       </div>
-      <div className="border-r border-gray-300 w-50 border-full h-[550px] ">
-        {sidebarLinks.map((item) => (
-          <NavLink
-            to={item.path}
-            key={item.name}
-            className={({ isActive }) =>
-              `flex gap-2 px-4 py-3 mt-2 ${isActive ? "bg-primary/20 border-r-4 border-primary" : "hover:bg-gray-100/90"}`
-            }
-          >
-            <img src={item.icon} className="w-7 h-7" alt="" /> <p>{item.name}</p>
-          </NavLink>
-        ))}
+      <div className="flex">
+        <div className="border-r border-gray-300 w-50 border-full h-[550px] ">
+          {sidebarLinks.map((item) => (
+            <NavLink
+              to={item.path}
+              key={item.name}
+              end={item.path === "/seller"}
+              className={({ isActive }) =>
+                `flex gap-2 px-4 py-3 mt-2 ${isActive ? "bg-primary/20 border-r-4 border-primary" : "hover:bg-gray-100/90"}`
+              }
+            >
+              <img src={item.icon} className="w-7 h-7" alt="" />
+              <p>{item.name}</p>
+            </NavLink>
+          ))}
+        </div>
+        <Outlet />
       </div>
-      <Outlet/>
     </>
   );
 };

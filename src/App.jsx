@@ -16,6 +16,9 @@ import MyOrders from "./components/MyOrders";
 import SellerLogin from "./components/seller/SellerLogin";
 import SellerLayout from "./pages/seller/SellerLayout";
 import ContactUs from "./components/ContactUs";
+import AddProduct from "./pages/seller/AddProduct";
+import Orders from "./pages/seller/Orders";
+import ProductList from "./pages/seller/ProductList";
 
 const App = () => {
   const { showUserLogin, isSeller } = useAppContext();
@@ -45,7 +48,11 @@ const App = () => {
           <Route
             path="/seller"
             element={isSeller ? <SellerLayout /> : <SellerLogin />}
-          />
+          >
+            <Route index element={isSeller ? <AddProduct /> : null} />
+            <Route path="product-list" element={<ProductList />} />
+            <Route path="orders" element={<Orders />} />
+          </Route>
         </Routes>
       </div>
       {!isSellerPage && <Footer />}
