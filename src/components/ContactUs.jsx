@@ -29,7 +29,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
       <div className="text-primary py-16 text-center">
         <h1 className="text-4xl font-bold">Contact Our Support Team</h1>
         <p className="mt-3 text-black">

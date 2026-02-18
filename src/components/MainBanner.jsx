@@ -8,13 +8,13 @@ const MainBanner = () => {
             <img src={assets.banner} alt="" className='w-full hidden md:block' />
             <img src={assets.main_banner_bg_sm} alt="" className='w-full md:hidden' />
 
-            <div className='absolute inset-0 flex flex-col items-center justify-center px-4'>
-                <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-center max-w-72 md:max-w-80 lg:max-w-105 leading-tight lg:leading-15'>
+            <div className=' absolute inset-0 flex flex-col items-center justify-center px-4 sm:mt-70 md:mt-10 '>
+                <h1 className='text-3xl md:text-2xl lg:text-5xl font-bold text-center max-w-72 md:max-w-80 lg:max-w-105 leading-tight lg:leading-15'>
                     Freshness You Can Trust, Saving You will Love!
                 </h1>
 
-                <div className='flex items-center mt-6 font-medium'>
-                    <Link to="/products" className='group flex items-center gap-2 px-7 md:px-9 py-3 bg-primary hover:bg-primary-dull transition rounded text-white cursor-pointer'>
+                <div className='flex items-center justift-center mt-6 font-medium'>
+                    <Link to="/products" className='group flex items-center gap-2 px-7 md:px-3 md:text-sm py-2 bg-primary hover:bg-primary-dull transition rounded text-white cursor-pointer'>
                         Shop Now
                         <img src={assets.white_arrow_icon} alt="" className='md:hidden transition group-focus:translate-x-1' />
                     </Link>

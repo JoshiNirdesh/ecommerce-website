@@ -15,7 +15,7 @@ const ProductCategory = () => {
         {searchCategory && ( <div> <p className='text-2xl font-medium uppercase'>{searchCategory.text}</p>
         <div className='bg-primary h-0.5 w-16'></div></div>)}
 
-       {filteProducts.length>0? (  <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6 mt-6'>{filteProducts.map((products,index)=>(
+       {filteProducts.length>0? (  <div className='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6 mt-6'>{filteProducts.map((products,index)=>(
         <ProductCard key={index} product={products}/>
        ))}</div>):(<div><p>No Products Found</p></div>
        )}
